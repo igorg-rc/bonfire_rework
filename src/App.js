@@ -1,24 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
+// import { makeStyles, createMuiTheme, ThemeProvider } from '@material-ui/core'
+
+import LandingPage from './pages/site/LandingPage'
+// import Login from './pages/admin-panel/Login'
+// import Industries from './pages/admin-panel/Industries'
+// import Technologies from './pages/admin-panel/Technologies'
+// import Messages from './pages/admin-panel/Messages'
+// import LandingLayout from './components/admin-panel/UI/LandingLayout';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={LandingPage} />
+        {/* <Route path="/admin/login" component={Login} />
+        <Route path="/admin/industries" component={Industries} />
+        <Route path="/admin/technologies" component={Technologies} />
+        <Route path="/admin/messages" component={Messages} />
+        <Route path="/" exact component={LandingLayout} /> */}
+      </Switch>
+    </Router>
   );
 }
 
